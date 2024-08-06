@@ -2,6 +2,7 @@ const express = require('express')
 const app = new express()
 const morgan = require('morgan')
 const cors = require('cors')
+const path = require('path')
 const jwt = require('jsonwebtoken')
 const userData = require('./model/userData')
 const adminData = require('./model/adminData')
@@ -23,7 +24,7 @@ app.use('/login',loginRoutes)
 app.use('/user',userRoutes)
 app.use('/emp',employeeRoutes)
 
-// app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/build/index.html'))})
+app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/build/index.html'))})
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server is listening on PORT ${process.env.PORT}:`)
