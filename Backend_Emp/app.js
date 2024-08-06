@@ -24,6 +24,7 @@ app.use('/login',loginRoutes)
 app.use('/user',userRoutes)
 app.use('/emp',employeeRoutes)
 
+app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/dist/index.html'))})
 
 app.listen(process.env.PORT,()=>{
