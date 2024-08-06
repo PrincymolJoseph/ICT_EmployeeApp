@@ -17,7 +17,9 @@ const employeeRoutes = require('./routes/employeeRoutes')
 app.use(morgan('dev'))
 app.use(cors())
 app.use(cors({
-    origin: 'https://ict-employee-app-client.vercel.app/'
+    origin: ['https://ict-employee-app-client.vercel.app/'],
+    credentials:true,
+    methods:['POST','GET']
   }));
 
 app.use(express.json())
