@@ -23,33 +23,7 @@ app.use('/login',loginRoutes)
 app.use('/user',userRoutes)
 app.use('/emp',employeeRoutes)
 
-
-
-// app.get('/',async(req,res)=>{
-//     try {
-//         const data = await blogData.find()
-//         res.status(200).send(data)
-//     } catch (error) {
-//         res.status(404).send(err)
-//     }
-// })
-
-// app.post('/',async(req,res)=>{
-//     try{
-//         console.log(req.body)
-//         var blogItem = {
-//             blogTitle:req.body.blogTitle,
-//             blogPost:req.body.blogPost,
-//             blogImg:req.body.blogImg,
-//             blogDate:req.body.blogDate
-//         }
-//         var newBlog = new blogData(blogItem)
-//         await newBlog.save()
-//         res.status(201).json(blogItem)
-//     }catch(e){
-//         console.log(e)
-//     }
-// })
+app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/build/index.html'))})
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server is listening on PORT ${process.env.PORT}:`)
