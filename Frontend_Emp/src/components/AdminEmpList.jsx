@@ -8,7 +8,7 @@ const AdminEmpList = () => {
   
   const [data,setData] = useState([])
   useEffect(()=>{
-    axiosInstanceAdmin.get('https://ict-employee-app-server.vercel.app/login/adminEmployees')
+    axiosInstanceAdmin.get('/login/adminEmployees')
     .then((res)=>{
       console.log(`axiosInstanceAdmin res.data is - `)
       console.log(res.data)

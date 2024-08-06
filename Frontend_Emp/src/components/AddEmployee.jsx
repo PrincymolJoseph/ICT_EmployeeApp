@@ -21,7 +21,8 @@ const AddEmployee = () => {
     })
 
     function captureEmployee(){
-        axiosInstanceAdmin.get(`https://ict-employee-app-server.vercel.app/emp/employee/${employee.id}`)
+        // axiosInstanceAdmin.get(`https://ict-employee-app-server.vercel.app/emp/employee/${employee.id}`)
+        axiosInstanceAdmin.get(`/emp/employee/${employee.id}`)
         .then((res)=>{
             if(res.data.message == 'Employee Not Present.'){
                 addEmployee()
@@ -37,7 +38,7 @@ const AddEmployee = () => {
 
     function addEmployee(){
         console.log(`Inside captureEmployee`)
-        axiosInstanceAdmin.post('https://ict-employee-app-server.vercel.app/emp/addEmployee',employee)
+        axiosInstanceAdmin.post('/emp/addEmployee',employee)
         .then((res)=>{
             console.log(`res.data.message from axios is - ${res.data.message}`)
             alert('Employee Added!!!')
