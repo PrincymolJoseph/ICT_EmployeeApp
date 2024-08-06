@@ -23,7 +23,7 @@ app.use('/login',loginRoutes)
 app.use('/user',userRoutes)
 app.use('/emp',employeeRoutes)
 
-app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/build/index.html'))})
+// app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/build/index.html'))})
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server is listening on PORT ${process.env.PORT}:`)
