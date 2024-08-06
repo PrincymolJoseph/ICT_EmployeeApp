@@ -8,7 +8,7 @@ const UserEmpList = () => {
 
   const [data,setData] = useState([])
   useEffect(()=>{
-    axiosInstanceUser.get('http://localhost:5000/login/userEmployees')
+    axiosInstanceUser.get('https://ict-employee-app-server.vercel.app/login/userEmployees')
     .then((res)=>{
       console.log(`res is - `)
       console.log(res)

@@ -13,7 +13,7 @@ const Login = () => {
 
   function captureValue(){
     console.log('Hi')
-    axios.post('http://localhost:5000/user/login',user)
+    axios.post('https://ict-employee-app-server.vercel.app/user/login',user)
     .then((res)=>{
       if(res.data.message == 'User not found'){
         alert('User not found')

@@ -22,7 +22,7 @@ const Employee = () => {
     })
 
     function captureEmployee(){
-        axiosInstanceAdmin.get(`http://localhost:5000/emp/employee/${e_id}`)
+        axiosInstanceAdmin.get(`https://ict-employee-app-server.vercel.app/emp/employee/${e_id}`)
         .then((res)=>{
             if(res.data.message == 'Employee Not Present.'){
                 alert('Employee Not Present.')
@@ -41,7 +41,7 @@ const Employee = () => {
     function updateEmployee(){
         console.log('Now employee is - ')
         console.log(employee)
-        axiosInstanceAdmin.patch(`http://localhost:5000/emp/employee/${e_id}`,employee)
+        axiosInstanceAdmin.patch(`https://ict-employee-app-server.vercel.app/emp/employee/${e_id}`,employee)
         .then((res)=>{
             console.log(`res.data.message from axios is - `)
             console.log(res.data.message)
@@ -56,7 +56,7 @@ const Employee = () => {
     function deleteEmployee(){
         console.log('Now employee is - ')
         console.log(employee)
-        axiosInstanceAdmin.delete(`http://localhost:5000/emp/employee/${e_id}`)
+        axiosInstanceAdmin.delete(`https://ict-employee-app-server.vercel.app/emp/employee/${e_id}`)
         .then((res)=>{
             console.log(`res.data.message from axios is - `)
             console.log(res.data.message)

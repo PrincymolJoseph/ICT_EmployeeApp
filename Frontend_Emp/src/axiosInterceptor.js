@@ -1,6 +1,6 @@
 import axios from "axios"
 const axiosInstanceUser=axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL:'https://ict-employee-app-server.vercel.app'
 })
 axiosInstanceUser.interceptors.request.use((config)=>{
     const user_accessToken = localStorage.getItem('userToken')
@@ -15,7 +15,7 @@ axiosInstanceUser.interceptors.request.use((config)=>{
 })
 
 const axiosInstanceAdmin=axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL:'https://ict-employee-app-server.vercel.app'
 })
 axiosInstanceAdmin.interceptors.request.use((config)=>{
     const admin_accessToken = localStorage.getItem('adminToken')
